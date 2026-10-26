@@ -232,23 +232,6 @@ h1 em, h2 em { color: var(--accent); }
   text-transform: uppercase;
 }
 
-/* Piano key stripe */
-.keys-bar {
-  height: 56px;
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
-  background-color: #fff;
-  background-image:
-    linear-gradient(90deg, transparent 0 calc(100% - 1px), var(--ink) calc(100% - 1px)),
-    linear-gradient(90deg,
-      transparent 0 9%, var(--ink) 9% 19%, transparent 19% 23%, var(--ink) 23% 33%,
-      transparent 33% 52%, var(--ink) 52% 62%, transparent 62% 66%, var(--ink) 66% 76%,
-      transparent 76% 80%, var(--ink) 80% 90%, transparent 90%);
-  background-size: 34px 100%, 238px 60%;
-  background-repeat: repeat-x;
-  background-position: 0 0, 0 0;
-}
-
 /* Sections */
 
 .section { padding: 112px 0; }
@@ -531,6 +514,7 @@ h1 em, h2 em { color: var(--accent); }
 .quote-band {
   padding: 96px 0;
   text-align: center;
+  border-top: 1px solid var(--ink);
   border-bottom: 1px solid var(--ink);
 }
 
