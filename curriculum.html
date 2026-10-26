@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curriculum Shop | Miss Bethany's Piano Studio</title>
+  <meta
+    name="description"
+    content="Books and materials used in lessons at Miss Bethany's Piano Studio."
+  />
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html">
+        <span class="brand-name">Miss Bethany's</span>
+        <span class="brand-sub">Piano Studio</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="index.html#about">About</a>
+        <a href="index.html#lessons">Lessons</a>
+        <a href="index.html#tuition">Tuition</a>
+        <a href="curriculum.html" aria-current="page">Curriculum</a>
+        <a href="worship.html">Worship</a>
+        <a href="index.html#enroll">Contact</a>
+        <a class="nav-cta" href="intake.html">Intake Form</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="label">Lesson Materials</p>
+        <h1>Curriculum <em>shop</em></h1>
+        <p class="section-lead">
+          The books and materials we use in lessons. Each student's books
+          depend on their level &mdash; I'll let you know exactly which ones
+          to get.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-blue">
+      <div class="container">
+        <div class="shop-grid" id="shop-grid">
+          <!-- Filled from js/curriculum.js -->
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-rule">
+      <div class="container worship-next">
+        <h2>Not sure which <em>books?</em></h2>
+        <div class="btn-row">
+          <a class="btn btn-solid" href="index.html#enroll">Ask Miss Bethany</a>
+          <a class="btn btn-line" href="index.html">Back to Home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="brand-name">Miss Bethany's Piano Studio</span>
+      <span>Classical Piano Lessons &middot; Vista, CA</span>
+      <span>&copy; 2026</span>
+    </div>
+  </footer>
+
+  <script src="js/curriculum.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

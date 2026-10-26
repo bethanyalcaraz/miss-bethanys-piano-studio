@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Intake | Miss Bethany's Piano Studio</title>
+  <meta name="description" content="New student intake form for Miss Bethany's Piano Studio." />
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html">
+        <span class="brand-name">Miss Bethany's</span>
+        <span class="brand-sub">Piano Studio</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="index.html#about">About</a>
+        <a href="index.html#lessons">Lessons</a>
+        <a href="index.html#tuition">Tuition</a>
+        <a href="curriculum.html">Curriculum</a>
+        <a href="worship.html">Worship</a>
+        <a href="index.html#enroll">Contact</a>
+        <a class="nav-cta" href="intake.html">Intake Form</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="label">New Students</p>
+        <h1>Student <em>intake</em></h1>
+        <p class="section-lead">
+          Please complete one form per student. This helps me get to know
+          each student and plan lessons around their experience and goals.
+        </p>
+      </div>
+    </section>
+
+    <div class="container intake-wrap">
+      <form id="intake-form" class="intake-form">
+        <!-- Student -->
+        <div class="form-block">
+          <h3>01 &mdash; Student</h3>
+          <div class="field-row">
+            <div class="field">
+              <label for="in-student">Student Name</label>
+              <input type="text" id="in-student" name="student" required />
+            </div>
+            <div class="field">
+              <label for="in-age">Age (lessons are for ages 6+)</label>
+              <input type="number" id="in-age" name="age" min="6" max="120" inputmode="numeric" required />
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="in-grade">School Grade (if applicable)</label>
+              <input type="text" id="in-grade" name="grade" />
+            </div>
+            <div class="field">
+              <label for="in-length">Lesson Length</label>
+              <select id="in-length" name="length" required>
+                <option value="">Select&hellip;</option>
+                <option value="30 minutes ($160/month)">30 minutes &mdash; $160/month</option>
+                <option value="45 minutes ($225/month)">45 minutes &mdash; $225/month</option>
+                <option value="Not sure yet">Not sure yet</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="form-block">
+          <h3>02 &mdash; Parent / Guardian</h3>
+          <div class="field">
+            <label for="in-parent">Parent / Guardian Name (if student is a minor)</label>
+            <input type="text" id="in-parent" name="parent" />
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="in-email">Email</label>
+              <input type="email" id="in-email" name="email" required />
+            </div>
+            <div class="field">
+              <label for="in-phone">Phone</label>
+              <input type="tel" id="in-phone" name="phone" required />
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="form-block">
+          <h3>03 &mdash; Experience</h3>
+          <fieldset class="field">
+            <legend>Has the student taken piano lessons before?</legend>
+            <div class="choices">
+              <label><input type="radio" name="prior" value="No, complete beginner" required /><span>No, complete beginner</span></label>
+              <label><input type="radio" name="prior" value="Self-taught / a little at home" /><span>Self-taught / a little</span></label>
+              <label><input type="radio" name="prior" value="Yes, formal lessons" /><span>Yes, formal lessons</span></label>
+            </div>
+          </fieldset>
+          <div class="field-row">
+            <div class="field">
+              <label for="in-years">Years of Piano Study</label>
+              <select id="in-years" name="years">
+                <option value="None">None</option>
+                <option value="Less than 1 year">Less than 1 year</option>
+                <option value="1–2 years">1&ndash;2 years</option>
+                <option value="3–5 years">3&ndash;5 years</option>
+                <option value="6+ years">6+ years</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="in-level">Current Level (self-assessed)</label>
+              <select id="in-level" name="level">
+                <option value="Beginner">Beginner</option>
+                <option value="Early intermediate">Early intermediate</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+                <option value="Not sure">Not sure</option>
+              </select>
+            </div>
+          </div>
+          <fieldset class="field">
+            <legend>Can the student read music?</legend>
+            <div class="choices">
+              <label><input type="radio" name="reading" value="Not yet" /><span>Not yet</span></label>
+              <label><input type="radio" name="reading" value="Treble clef only" /><span>Treble clef only</span></label>
+              <label><input type="radio" name="reading" value="Treble and bass clef" /><span>Treble &amp; bass clef</span></label>
+              <label><input type="radio" name="reading" value="Reads fluently" /><span>Reads fluently</span></label>
+            </div>
+          </fieldset>
+          <div class="field">
+            <label for="in-books">Method Books or Pieces Recently Studied</label>
+            <textarea id="in-books" name="books" rows="2" placeholder="e.g. Faber Piano Adventures Level 2A, Bach Minuet in G&hellip;"></textarea>
+          </div>
+          <div class="field">
+            <label for="in-other">Other Instruments, Theory, or Exams</label>
+            <textarea id="in-other" name="otherExp" rows="2" placeholder="Choir, violin, music theory classes, recitals, CM / RCM exams&hellip;"></textarea>
+          </div>
+          <fieldset class="field">
+            <legend>Instrument at Home</legend>
+            <div class="choices">
+              <label><input type="radio" name="instrument" value="Acoustic piano" required /><span>Acoustic piano</span></label>
+              <label><input type="radio" name="instrument" value="Digital piano (88 weighted keys)" /><span>Digital piano (88 weighted)</span></label>
+              <label><input type="radio" name="instrument" value="Keyboard" /><span>Keyboard</span></label>
+              <label><input type="radio" name="instrument" value="None yet" /><span>None yet</span></label>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- Goals -->
+        <div class="form-block">
+          <h3>04 &mdash; Goals</h3>
+          <div class="field">
+            <label for="in-goals">What are the student's goals for piano lessons?</label>
+            <textarea id="in-goals" name="goals" rows="3"></textarea>
+          </div>
+          <div class="field">
+            <label for="in-music">Favorite styles, composers, or pieces</label>
+            <input type="text" id="in-music" name="music" />
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="in-practice">Practice Time Available Per Day</label>
+              <select id="in-practice" name="practice">
+                <option value="10–15 minutes">10&ndash;15 minutes</option>
+                <option value="15–30 minutes">15&ndash;30 minutes</option>
+                <option value="30–45 minutes">30&ndash;45 minutes</option>
+                <option value="45+ minutes">45+ minutes</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="in-times">Preferred Lesson Days / Times</label>
+              <input type="text" id="in-times" name="times" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="in-notes">Anything else I should know? (learning needs, siblings, questions)</label>
+            <textarea id="in-notes" name="notes" rows="3"></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-solid">Submit Intake Form</button>
+        <p class="fine-print">
+          This opens your email app with your answers ready to send. If it
+          doesn't open, email Bethany directly at
+          <a href="mailto:mrsbethanyalcaraz@gmail.com">mrsbethanyalcaraz@gmail.com</a>.
+          A one-time $50 enrollment fee per student is due at registration.
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="brand-name">Miss Bethany's Piano Studio</span>
+      <span>Classical Piano Lessons &middot; Vista, CA</span>
+      <span>&copy; 2026</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      var form = document.getElementById("intake-form");
+      if (!form) return;
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var data = new FormData(form);
+        function v(key) {
+          var val = (data.get(key) || "").toString().trim();
+          return val || "—";
+        }
+
+        var lines = [
+          "STUDENT",
+          "Name: " + v("student"),
+          "Age: " + v("age"),
+          "Grade: " + v("grade"),
+          "Lesson length: " + v("length"),
+          "",
+          "PARENT / CONTACT",
+          "Parent/guardian: " + v("parent"),
+          "Email: " + v("email"),
+          "Phone: " + v("phone"),
+          "",
+          "EXPERIENCE",
+          "Prior lessons: " + v("prior"),
+          "Years of study: " + v("years"),
+          "Current level: " + v("level"),
+          "Reads music: " + v("reading"),
+          "Books/pieces studied: " + v("books"),
+          "Other music experience: " + v("otherExp"),
+          "Instrument at home: " + v("instrument"),
+          "",
+          "GOALS",
+          "Goals: " + v("goals"),
+          "Favorite styles/composers: " + v("music"),
+          "Daily practice time: " + v("practice"),
+          "Preferred days/times: " + v("times"),
+          "Notes: " + v("notes")
+        ];
+
+        window.location.href =
+          "mailto:mrsbethanyalcaraz@gmail.com" +
+          "?subject=" + encodeURIComponent("Student Intake — " + v("student")) +
+          "&body=" + encodeURIComponent(lines.join("\n"));
+      });
+    })();
+  </script>
+</body>
+</html>
