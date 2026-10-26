@@ -526,6 +526,41 @@ h1 em, h2 em { color: var(--accent); }
 .section-blue .feature p,
 .section-blue .shop-desc { color: #4f5b66; }
 
+/* Quote band */
+
+.quote-band {
+  padding: 96px 0;
+  text-align: center;
+  border-bottom: 1px solid var(--ink);
+}
+
+.quote-text {
+  font-family: var(--serif);
+  font-size: clamp(40px, 6vw, 84px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.quote-text em { color: var(--accent-ink); }
+
+.quote-text::before,
+.quote-text::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: var(--ink);
+  margin: 0 auto 36px;
+}
+
+.quote-text::after { margin: 36px auto 0; }
+
+@media (max-width: 760px) {
+  .quote-band { padding: 64px 0; }
+}
+
 /* Worship studio */
 
 .section-dark { background: var(--ink); color: #fff; }
