@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Student Intake | Miss Bethany's Piano Studio</title>
-  <meta name="description" content="New student intake form for Miss Bethany's Piano Studio." />
+  <title>New Student Enrollment | Miss Bethany's Piano Studio</title>
+  <meta name="description" content="New student enrollment form for Miss Bethany's Piano Studio." />
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,7 +12,7 @@
     href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="css/style.css?v=4" />
+  <link rel="stylesheet" href="css/style.css?v=5" />
 </head>
 <body>
   <header class="site-header">
@@ -43,7 +43,7 @@
         <a href="curriculum.html">Curriculum</a>
         <a href="worship.html">Worship</a>
         <a href="index.html#enroll">Contact</a>
-        <a class="nav-cta" href="intake.html">Intake Form</a>
+        <a class="nav-cta" href="intake.html">Enrollment</a>
       </nav>
     </div>
   </header>
@@ -52,16 +52,34 @@
     <section class="page-hero">
       <div class="container">
         <p class="label">New Students</p>
-        <h1>Student <em>intake</em></h1>
+        <h1>New student <em>enrollment</em></h1>
         <p class="section-lead">
           Please complete one form per student. This helps me get to know
-          each student and plan lessons around their experience and goals.
+          each student, plan lessons around their experience and goals, and
+          confirms you've read how tuition works.
         </p>
       </div>
     </section>
 
     <div class="container intake-wrap">
       <form id="intake-form" class="intake-form">
+        <!-- Lesson request check -->
+        <div class="form-block">
+          <h3>Before you begin</h3>
+          <fieldset class="field">
+            <legend>Have you already sent a lesson request?</legend>
+            <div class="choices">
+              <label><input type="radio" name="requested" value="Yes" required /><span>Yes</span></label>
+              <label><input type="radio" name="requested" value="Not yet" /><span>Not yet</span></label>
+            </div>
+          </fieldset>
+          <p class="form-alert" id="request-first" hidden>
+            Please <a href="index.html#enroll">send a lesson request</a> first
+            so I can confirm an opening for your preferred day and time. Then
+            come back to complete enrollment.
+          </p>
+        </div>
+
         <!-- Student -->
         <div class="form-block">
           <h3>01 &mdash; Student</h3>
@@ -180,23 +198,8 @@
             <textarea id="in-goals" name="goals" rows="3"></textarea>
           </div>
           <div class="field">
-            <label for="in-music">Favorite styles, composers, or pieces</label>
-            <input type="text" id="in-music" name="music" />
-          </div>
-          <div class="field-row">
-            <div class="field">
-              <label for="in-practice">Practice Time Available Per Day</label>
-              <select id="in-practice" name="practice">
-                <option value="10–15 minutes">10&ndash;15 minutes</option>
-                <option value="15–30 minutes">15&ndash;30 minutes</option>
-                <option value="30–45 minutes">30&ndash;45 minutes</option>
-                <option value="45+ minutes">45+ minutes</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="in-times">Preferred Lesson Days / Times</label>
-              <input type="text" id="in-times" name="times" />
-            </div>
+            <label for="in-times">Preferred Lesson Days / Times</label>
+            <input type="text" id="in-times" name="times" />
           </div>
           <div class="field">
             <label for="in-notes">Anything else I should know? (learning needs, siblings, questions)</label>
@@ -204,12 +207,42 @@
           </div>
         </div>
 
-        <button type="submit" class="btn btn-solid">Submit Intake Form</button>
+        <!-- Agreement -->
+        <div class="form-block">
+          <h3>05 &mdash; Tuition &amp; Studio Agreement</h3>
+          <div class="agreement">
+            <ul>
+              <li><strong>Enrollment fee.</strong> A one-time $50 enrollment fee per student is due at registration to reserve your lesson time.</li>
+              <li><strong>Monthly tuition.</strong> $160/month for 30-minute lessons or $225/month for 45-minute lessons.</li>
+              <li><strong>Your reserved spot.</strong> Each family reserves a day of the week and a time. That spot is yours all year &mdash; the same lesson time, every week.</li>
+              <li><strong>Same tuition every month.</strong> Tuition is the same each month &mdash; including shorter months like December and months with a fifth week.</li>
+              <li><strong>School calendar.</strong> The studio follows the school calendar, so there are no lessons on school holidays. In months with a fifth week, there are no lessons that fifth week.</li>
+              <li><strong>Make-up lessons.</strong> If I need to cancel a lesson, it will always be made up. Make-ups for lessons a student misses may be offered when time allows, but aren't guaranteed.</li>
+              <li><strong>In-home lessons.</strong> Offered on Fridays only, with a $20/month travel fee.</li>
+            </ul>
+            <p class="fine-print">Read the full details under <a href="index.html#tuition">Tuition</a>.</p>
+          </div>
+          <label class="agree">
+            <input type="checkbox" name="agree" value="Yes" required />
+            <span>I have read and agree to the tuition and studio policies above.</span>
+          </label>
+          <div class="field-row">
+            <div class="field">
+              <label for="in-signature">Parent / Guardian Signature (type full name)</label>
+              <input type="text" id="in-signature" name="signature" required />
+            </div>
+            <div class="field">
+              <label for="in-date">Date</label>
+              <input type="date" id="in-date" name="date" required />
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-solid">Submit Enrollment Form</button>
         <p class="fine-print">
           This opens your email app with your answers ready to send. If it
           doesn't open, email Bethany directly at
           <a href="mailto:mrsbethanyalcaraz@gmail.com">mrsbethanyalcaraz@gmail.com</a>.
-          A one-time $50 enrollment fee per student is due at registration.
         </p>
       </form>
     </div>
@@ -229,6 +262,21 @@
       var form = document.getElementById("intake-form");
       if (!form) return;
 
+      var dateInput = document.getElementById("in-date");
+      if (dateInput && !dateInput.value) {
+        var now = new Date();
+        dateInput.value = now.getFullYear() + "-" +
+          String(now.getMonth() + 1).padStart(2, "0") + "-" +
+          String(now.getDate()).padStart(2, "0");
+      }
+
+      var requestNote = document.getElementById("request-first");
+      form.querySelectorAll('input[name="requested"]').forEach(function (radio) {
+        radio.addEventListener("change", function () {
+          requestNote.hidden = form.requested.value !== "Not yet";
+        });
+      });
+
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         var data = new FormData(form);
@@ -238,6 +286,8 @@
         }
 
         var lines = [
+          "Lesson request already sent: " + v("requested"),
+          "",
           "STUDENT",
           "Name: " + v("student"),
           "Age: " + v("age"),
@@ -260,15 +310,18 @@
           "",
           "GOALS",
           "Goals: " + v("goals"),
-          "Favorite styles/composers: " + v("music"),
-          "Daily practice time: " + v("practice"),
           "Preferred days/times: " + v("times"),
-          "Notes: " + v("notes")
+          "Notes: " + v("notes"),
+          "",
+          "AGREEMENT",
+          "Read and agreed to tuition & studio policies: " + (data.get("agree") ? "Yes" : "No"),
+          "Signature: " + v("signature"),
+          "Date: " + v("date")
         ];
 
         window.location.href =
           "mailto:mrsbethanyalcaraz@gmail.com" +
-          "?subject=" + encodeURIComponent("Student Intake — " + v("student")) +
+          "?subject=" + encodeURIComponent("New Student Enrollment — " + v("student")) +
           "&body=" + encodeURIComponent(lines.join("\n"));
       });
     })();

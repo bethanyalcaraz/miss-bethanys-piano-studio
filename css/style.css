@@ -747,6 +747,46 @@ fieldset.field {
 
 .intake-cta p { margin: 0 0 16px; font-size: 15px; }
 
+.form-alert {
+  margin: 0;
+  padding: 14px 16px;
+  background: var(--tint);
+  border-left: 3px solid var(--accent-ink);
+  font-size: 15px;
+}
+
+.agreement {
+  border: 1px solid var(--ink);
+  padding: 24px 28px;
+}
+
+.agreement ul { margin: 0; padding-left: 18px; }
+
+.agreement li {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.agreement .fine-print { margin-top: 12px; }
+
+.agree {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.agree input {
+  width: 20px;
+  height: 20px;
+  margin: 1px 0 0;
+  flex-shrink: 0;
+  accent-color: var(--ink);
+}
+
 /* Intake page */
 
 .page-hero { padding: 88px 0 56px; border-bottom: 1px solid var(--ink); }
