@@ -83,8 +83,8 @@ h1 em, h2 em { color: var(--accent); }
 }
 
 .brand-icon {
-  width: 28px;
-  height: 28px;
+  width: 40px;
+  height: 32px;
   flex-shrink: 0;
   color: var(--accent);
 }
@@ -787,7 +787,7 @@ fieldset.field {
   .split .section-head { position: static; }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 1000px) {
   .nav-toggle { display: block; }
 
   .site-nav {
@@ -808,7 +808,9 @@ fieldset.field {
   .site-nav a { padding: 16px 24px; border-top: 1px solid var(--hair); font-size: 15px; }
   .site-nav a::after { display: none; }
   .nav-cta { border: 0; border-top: 1px solid var(--hair); }
+}
 
+@media (max-width: 760px) {
   .brand-name { font-size: 22px; }
 
   .hero { padding-top: 48px; }
@@ -842,7 +844,7 @@ fieldset.field {
 @media (max-width: 420px) {
   .container, .nav-wrap { padding-left: 16px; padding-right: 16px; }
   .brand-text { flex-direction: column; align-items: flex-start; gap: 3px; }
-  .brand-icon { width: 30px; height: 30px; }
+  .brand-icon { width: 40px; height: 32px; }
   .brand-sub { font-size: 9px; }
 }
 
