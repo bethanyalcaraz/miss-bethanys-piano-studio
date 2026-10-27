@@ -78,6 +78,19 @@ h1 em, h2 em { color: var(--accent); }
 .brand {
   text-decoration: none;
   display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.brand-text {
+  display: flex;
   align-items: baseline;
   gap: 8px;
 }
@@ -828,7 +841,8 @@ fieldset.field {
 
 @media (max-width: 420px) {
   .container, .nav-wrap { padding-left: 16px; padding-right: 16px; }
-  .brand { flex-direction: column; align-items: flex-start; gap: 3px; }
+  .brand-text { flex-direction: column; align-items: flex-start; gap: 3px; }
+  .brand-icon { width: 30px; height: 30px; }
   .brand-sub { font-size: 9px; }
 }
 
