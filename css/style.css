@@ -512,7 +512,7 @@ h1 em, h2 em { color: var(--accent); }
 /* Quote band */
 
 .quote-band {
-  padding: 96px 0;
+  padding: 136px 0;
   text-align: center;
   border-top: 1px solid var(--ink);
   border-bottom: 1px solid var(--ink);
@@ -520,14 +520,15 @@ h1 em, h2 em { color: var(--accent); }
 
 .quote-text {
   font-family: var(--serif);
-  font-size: clamp(40px, 6vw, 84px);
-  line-height: 1.05;
+  font-size: clamp(30px, 7.4vw, 112px);
+  line-height: 1.02;
   letter-spacing: -0.02em;
-  max-width: 980px;
   margin: 0 auto;
 }
 
-.quote-text em { color: var(--accent-ink); }
+.quote-band .container { max-width: 1440px; }
+
+.quote-text em { color: var(--accent-ink); white-space: nowrap; }
 
 .quote-text::before,
 .quote-text::after {
@@ -542,7 +543,9 @@ h1 em, h2 em { color: var(--accent); }
 .quote-text::after { margin: 36px auto 0; }
 
 @media (max-width: 760px) {
-  .quote-band { padding: 64px 0; }
+  .quote-band { padding: 40px 0; }
+  .quote-text::before { margin-bottom: 20px; width: 32px; }
+  .quote-text::after { margin-top: 20px; width: 32px; }
 }
 
 /* Worship studio */
