@@ -79,12 +79,12 @@ h1 em, h2 em { color: var(--accent); }
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .brand-icon {
-  width: 40px;
-  height: 32px;
+  width: 30px;
+  height: 24px;
   flex-shrink: 0;
   color: var(--accent);
 }
@@ -844,7 +844,7 @@ fieldset.field {
 @media (max-width: 420px) {
   .container, .nav-wrap { padding-left: 16px; padding-right: 16px; }
   .brand-text { flex-direction: column; align-items: flex-start; gap: 3px; }
-  .brand-icon { width: 40px; height: 32px; }
+  .brand-icon { width: 30px; height: 24px; }
   .brand-sub { font-size: 9px; }
 }
 
