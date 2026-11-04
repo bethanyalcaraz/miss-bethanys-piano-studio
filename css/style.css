@@ -482,16 +482,7 @@ h1 em, h2 em { color: var(--accent); }
 
 .fee-calc-info .label { color: var(--accent-ink); }
 
-.fee-tiers { list-style: none; margin: 0; padding: 0; }
-
-.fee-tiers li {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 10px 0;
-  border-top: 1px solid var(--hair);
-  font-size: 15px;
-}
+.fee-calc-intro { margin: 0; font-size: 15px; color: var(--muted); max-width: 360px; }
 
 .fee-calc-form { display: flex; flex-direction: column; gap: 16px; }
 .fee-calc-form .btn { align-self: flex-start; }
