@@ -12,7 +12,7 @@ const USER_AGENT = "MissBethanysPianoStudio/1.0 (https://missbethany.studio)";
 
 const TIERS = [
   { maxMiles: 5, fee: 30, label: "within 5 miles of the studio" },
-  { maxMiles: 10, fee: 60, label: "5 to 10 miles from the studio" },
+  { maxMiles: 10, fee: 50, label: "5 to 10 miles from the studio" },
   { maxMiles: Infinity, fee: 75, label: "more than 10 miles from the studio" }
 ];
 
