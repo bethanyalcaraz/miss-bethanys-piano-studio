@@ -66,6 +66,72 @@
     });
   });
 
+  // Lesson photo carousel. Loads images/gallery/1.jpg, 2.jpg, ... in order
+  // (also .jpeg, .png, .webp, any letter case) and stops at the first
+  // number that has no photo. Stays hidden until at least one photo exists.
+  var gallery = document.getElementById("gallery");
+  if (gallery) {
+    var track = document.getElementById("gallery-track");
+    var counter = document.getElementById("gallery-count");
+    var exts = ["jpg", "jpeg", "png", "webp", "JPG", "JPEG", "PNG", "WEBP"];
+    var maxPhotos = 40;
+
+    var findPhoto = function (n, i, done) {
+      if (i >= exts.length) return done(null);
+      var src = "images/gallery/" + n + "." + exts[i];
+      var img = new Image();
+      img.onload = function () { done(src); };
+      img.onerror = function () { findPhoto(n, i + 1, done); };
+      img.src = src;
+    };
+
+    var slides = [];
+    var current = 0;
+    var show = function (index) {
+      current = Math.max(0, Math.min(slides.length - 1, index));
+      track.scrollTo({ left: slides[current].offsetLeft - track.offsetLeft, behavior: "smooth" });
+    };
+    var update = function () {
+      var w = track.clientWidth || 1;
+      current = Math.round(track.scrollLeft / w);
+      counter.textContent = (current + 1) + " / " + slides.length;
+      gallery.querySelector('[data-dir="-1"]').disabled = current === 0;
+      gallery.querySelector('[data-dir="1"]').disabled = current >= slides.length - 1;
+    };
+
+    var addNext = function (n) {
+      if (n > maxPhotos) return;
+      findPhoto(n, 0, function (src) {
+        if (!src) return;
+        var slide = document.createElement("figure");
+        slide.className = "carousel-slide";
+        var img = document.createElement("img");
+        img.src = src;
+        img.alt = "Miss Bethany teaching a piano lesson";
+        img.loading = n > 2 ? "lazy" : "eager";
+        slide.appendChild(img);
+        track.appendChild(slide);
+        slides.push(slide);
+        gallery.hidden = false;
+        gallery.classList.toggle("single", slides.length === 1);
+        update();
+        addNext(n + 1);
+      });
+    };
+    addNext(1);
+
+    gallery.querySelectorAll(".carousel-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        show(current + parseInt(btn.getAttribute("data-dir"), 10));
+      });
+    });
+    track.addEventListener("scroll", function () { window.requestAnimationFrame(update); });
+    track.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") { e.preventDefault(); show(current - 1); }
+      if (e.key === "ArrowRight") { e.preventDefault(); show(current + 1); }
+    });
+  }
+
   // In-home travel fee estimate (calculated on the server; see functions/api)
   var feeForm = document.getElementById("fee-calc-form");
   if (feeForm) {

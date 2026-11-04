@@ -15,7 +15,7 @@
     href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="css/style.css?v=8" />
+  <link rel="stylesheet" href="css/style.css?v=9" />
 </head>
 <body id="top">
   <header class="site-header">
@@ -110,6 +110,18 @@
             I reopened my studio in 2026, and I can't wait to introduce you (or
             your student) to a love of music!
           </p>
+        </div>
+      </div>
+
+      <!-- Photo carousel: shows images/gallery/1.jpg, 2.jpg, ... when uploaded -->
+      <div class="container">
+        <div class="carousel" id="gallery" hidden>
+          <div class="carousel-track" id="gallery-track" tabindex="0" aria-label="Photos of lessons"></div>
+          <div class="carousel-controls">
+            <button type="button" class="carousel-btn" data-dir="-1" aria-label="Previous photo">&larr;</button>
+            <span class="carousel-count" id="gallery-count" aria-live="polite"></span>
+            <button type="button" class="carousel-btn" data-dir="1" aria-label="Next photo">&rarr;</button>
+          </div>
         </div>
       </div>
     </section>
@@ -378,6 +390,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=3"></script>
+  <script src="js/main.js?v=4"></script>
 </body>
 </html>

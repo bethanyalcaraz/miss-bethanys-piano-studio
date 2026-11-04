@@ -10,3 +10,8 @@ Classical piano lessons in Vista, CA. Static site, no build step: open
 - `js/curriculum.js` — curriculum shop items; paste Amazon links into `url`
 
 Live at https://missbethany.studio
+
+## Lesson photos
+
+Upload photos to `images/gallery/` named `1.jpg`, `2.jpg`, `3.jpg`, ... and
+they appear in the carousel under "Meet Miss Bethany" automatically.

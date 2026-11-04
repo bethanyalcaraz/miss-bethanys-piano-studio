@@ -308,6 +308,68 @@ h1 em, h2 em { color: var(--accent); }
   max-width: 600px;
 }
 
+/* Photo carousel */
+
+.carousel { margin-top: 72px; }
+
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  border: 1px solid var(--ink);
+}
+
+.carousel-track::-webkit-scrollbar { display: none; }
+.carousel-track:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 4px; }
+
+.carousel-slide {
+  flex: 0 0 100%;
+  margin: 0;
+  scroll-snap-align: start;
+  aspect-ratio: 16 / 9;
+  background: var(--soft);
+}
+
+.carousel-slide img { width: 100%; height: 100%; object-fit: cover; }
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.carousel.single .carousel-controls { display: none; }
+
+.carousel-count {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  min-width: 48px;
+  text-align: center;
+}
+
+.carousel-btn {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--ink);
+  background: #fff;
+  color: var(--ink);
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.carousel-btn:hover:not(:disabled) { background: var(--ink); color: #fff; }
+.carousel-btn:disabled { opacity: 0.3; cursor: default; }
+
+@media (max-width: 760px) {
+  .carousel { margin-top: 48px; }
+  .carousel-slide { aspect-ratio: 4 / 3; }
+}
+
 /* Lessons */
 
 .feature-grid {
