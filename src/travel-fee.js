@@ -1,7 +1,7 @@
 /*
   Travel fee estimate for in-home lessons.
 
-  Runs on Cloudflare (Pages Functions), not in the visitor's browser, so the
+  Runs on Cloudflare (in the Worker), not in the visitor's browser, so the
   studio address is never sent to the page. It is read from the private
   Cloudflare setting STUDIO_ADDRESS. The response only names the fee tier,
   never the distance, so the studio location can't be worked out from it.
@@ -75,7 +75,7 @@ export function tierFor(miles) {
   return TIERS.find((t) => miles <= t.maxMiles);
 }
 
-export async function onRequestPost({ request, env }) {
+export async function travelFee(request, env) {
   if (!env.STUDIO_ADDRESS) return json({ error: "not_configured" }, 503);
 
   let address = "";
