@@ -15,7 +15,7 @@
     href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="css/style.css?v=6" />
+  <link rel="stylesheet" href="css/style.css?v=7" />
 </head>
 <body id="top">
   <header class="site-header">
@@ -197,6 +197,28 @@
             distance from the Vista studio.
           </p>
         </div>
+        <div class="fee-calc">
+          <div class="fee-calc-info">
+            <p class="label">In-Home Travel Fee</p>
+            <ul class="fee-tiers">
+              <li><span>Within 5 miles</span><strong>$30/month</strong></li>
+              <li><span>5&ndash;10 miles</span><strong>$60/month</strong></li>
+              <li><span>More than 10 miles</span><strong>$75/month</strong></li>
+            </ul>
+          </div>
+          <form id="fee-calc-form" class="fee-calc-form">
+            <div class="field">
+              <label for="fc-address">Estimate your travel fee</label>
+              <input type="text" id="fc-address" name="address" autocomplete="street-address" placeholder="Street address, city" required />
+            </div>
+            <button type="submit" class="btn btn-solid btn-small">Calculate</button>
+            <p class="fee-calc-result" id="fee-calc-result" aria-live="polite"></p>
+            <p class="fine-print">
+              Distance is measured in a straight line from the Vista studio.
+              Your address is only used for this estimate and isn't saved.
+            </p>
+          </form>
+        </div>
 
         <h3 class="policy-head">How tuition works</h3>
         <div class="policy-grid">
@@ -357,6 +379,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=2"></script>
+  <script src="js/main.js?v=3"></script>
 </body>
 </html>

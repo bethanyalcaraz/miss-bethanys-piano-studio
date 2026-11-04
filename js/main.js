@@ -66,6 +66,43 @@
     });
   });
 
+  // In-home travel fee estimate (calculated on the server; see functions/api)
+  var feeForm = document.getElementById("fee-calc-form");
+  if (feeForm) {
+    var feeResult = document.getElementById("fee-calc-result");
+    var fallback = " You can also text me at (760) 212-7749.";
+    feeForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var address = feeForm.address.value.trim();
+      if (!address) return;
+      feeResult.textContent = "Calculating\u2026";
+      fetch("/api/travel-fee", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ address: address })
+      })
+        .then(function (res) {
+          return res.json().then(function (data) {
+            return { ok: res.ok, data: data };
+          });
+        })
+        .then(function (r) {
+          if (r.ok) {
+            feeResult.textContent =
+              "Estimated travel fee: $" + r.data.fee + "/month (" + r.data.label + ").";
+          } else if (r.data && r.data.error === "not_found") {
+            feeResult.textContent =
+              "I couldn't find that address. Try adding the city and ZIP code." + fallback;
+          } else {
+            throw new Error("unavailable");
+          }
+        })
+        .catch(function () {
+          feeResult.textContent = "Sorry, the calculator isn't available right now." + fallback;
+        });
+    });
+  }
+
   // Enrollment request -> mailto
   var form = document.getElementById("enroll-form");
   if (form) {

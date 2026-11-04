@@ -470,6 +470,45 @@ h1 em, h2 em { color: var(--accent); }
   color: var(--muted);
 }
 
+.fee-calc {
+  margin-top: -1px;
+  border: 1px solid var(--ink);
+  padding: 28px 40px 32px;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.fee-calc-info .label { color: var(--accent-ink); }
+
+.fee-tiers { list-style: none; margin: 0; padding: 0; }
+
+.fee-tiers li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-top: 1px solid var(--hair);
+  font-size: 15px;
+}
+
+.fee-calc-form { display: flex; flex-direction: column; gap: 16px; }
+.fee-calc-form .btn { align-self: flex-start; }
+
+.fee-calc-result {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  min-height: 1.6em;
+}
+
+.fee-calc-form .fine-print { margin: 0; }
+
+@media (max-width: 760px) {
+  .fee-calc { grid-template-columns: 1fr; gap: 24px; padding: 24px 28px; }
+}
+
 /* Curriculum shop */
 
 .shop-grid {
